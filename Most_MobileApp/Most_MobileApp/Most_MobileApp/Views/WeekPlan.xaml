@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Most_MobileApp.Views.WeekPlan"
+			 BackgroundColor="#4b688f">
+	<ContentPage.Content>
+		<ScrollView>
+		<Grid x:Name="MasterGrid" RowSpacing="0" ColumnSpacing="0">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="100" />
+				<RowDefinition Height="100" />
+				<RowDefinition Height="*"	/>
+			</Grid.RowDefinitions>
+			<StackLayout x:Name="LogoMost" VerticalOptions="StartAndExpand" BackgroundColor="#4b688f" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" Margin="0,0,0,-45">
+				<Image x:Name="MostIcon" Source="logo_MOST_2.png" Margin="0,15,0,15" />
+			</StackLayout>
+			<StackLayout x:Name="NavigationBar" Orientation="Horizontal" VerticalOptions="Start" BackgroundColor="#45B43B" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1" Margin="0,-45,0,0">
+				<StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="Start" >
+					<Picker x:Name="MainMenu" SelectedIndexChanged="MenuOption">
+						<Picker.Items>
+							<x:String>SDA MOST</x:String>
+							<x:String>Konstrukcja</x:String>
+							<x:String>Duszpasterze</x:String>
+							<x:String>Plan tygodnia</x:String>
+							<x:String>Jak trafić?</x:String>
+							<x:String>Kalendarz</x:String>
+						</Picker.Items>
+						<Picker.SelectedIndex>3</Picker.SelectedIndex>
+					</Picker>
+				</StackLayout>
+				<StackLayout Orientation="Vertical" HorizontalOptions="End" VerticalOptions="Start">
+					<Button x:Name="BackButton" VerticalOptions="Center" Text="Wyjdź" Font="Assets/Fonts/LATO-BLACK.TTF, 12" Opacity="0.7" Clicked="BackProcedure"/>
+				</StackLayout>
+			</StackLayout>
+			<Grid x:Name="ContentGrid" RowSpacing="0" ColumnSpacing="0" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" Margin="0,-60,0,0">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*"/>
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="*" />	<!--Wstęp-->
+					<RowDefinition Height="20" />	<!-- Nd-->
+					<RowDefinition Height="100" />
+					<RowDefinition Height="20" />	<!-- Pon-->
+					<RowDefinition Height="80" />
+					<RowDefinition Height="20" />	<!-- wt-->
+					<RowDefinition Height="80" />
+					<RowDefinition Height="20" />	<!-- sr-->
+					<RowDefinition Height="80" />
+					<RowDefinition Height="20" />	<!-- czw-->
+					<RowDefinition Height="80" />
+					<RowDefinition Height="20" />	<!--pt-->
+					<RowDefinition Height="80" />
+					<RowDefinition Height="20" />	<!-- sob-->
+					<RowDefinition Height="40" />
+				</Grid.RowDefinitions>
+				<Label Text="Poniższy plan jedynie zakreśla wydarzenia, którego każdego tygodnia mają miejsce w Moście. Cały czas dzieje się coś nowego, a poszczególne terminy mogą się czasami zmieniać. Śledź zatem kalendarz, aby być na bieżąco!"
+						   Font="Assets/Fonts/LATO-BLACK.TTF, 11" Grid.Column="0" Grid.Row = "0" Margin="10,0,10,25" XAlign="Start" TextColor="White"/>
+				
+				<Label Text="Niedziela" FontAttributes="Bold"
+						   Font="Assets/Fonts/LATO-BLACK.TTF, 16" Grid.Column="0" Grid.Row = "1" Margin="10,0,10,0" XAlign="Start" TextColor="White"/>
+				<Label Text="• 17:30 – Próba scholi (salka kaflowa) &#10;• 18:30 – Spotkanie LSO (salka wężowa) &#10;• 19:19 – Didaskalia (kościół NSJ) &#10;• 19:30 – Msza święta (kościół NSJ) &#10;• 20:45 – Kolacja (Stolarnia)" 
+						   Font="Assets/Fonts/LATO-BLACK.TTF, 13" Grid.Column="0" Grid.Row = "2" Margin="10,0,10,0" XAlign="Start" TextColor="White"/>
+				
+				<Label Text="Poniedziałek" FontAttributes="Bold"
+						   Font="Assets/Fonts/LATO-BLACK.TTF, 16" Grid.Column="0" Grid.Row = "3" Margin="10,0,10,0" XAlign="Start" TextColor="White"/>
+				<Label Text="• 17:30 – Dziewczyny zza płota &#10;• 18:40 – Różaniec (kościół NSJ) &#10;• 19:00 – Msza święta (kościół NSJ) &#10;• 20:00 – Lectio Divina (salka Mostu) " 
+						   Font="Assets/Fonts/LATO-BLACK.TTF, 13" Grid.Column="0" Grid.Row = "4" Margin="10,0,10,0" XAlign="Start" TextColor="White"/>
+
+				<Label Text="Wtorek" FontAttributes="Bold"
+						   Font="Assets/Fonts/LATO-BLACK.TTF, 16" Grid.Column="0" Grid.Row = "5" Margin="10,0,10,0" XAlign="Start" TextColor="White"/>
+				<Label Text="• 17:00 – Gitara z MOSTem &#10;• 19:00 – Adoracja (kościół NSJ) &#10;• 19:30 – Msza święta (kościół NSJ) &#10;• 20:15 – Cykl POBIEGNIJMY" 
+						   Font="Assets/Fonts/LATO-BLACK.TTF, 13" Grid.Column="0" Grid.Row = "6" Margin="10,0,10,0" XAlign="Start" TextColor="White"/>
+
+				<Label Text="Środa" FontAttributes="Bold"
+						   Font="Assets/Fonts/LATO-BLACK.TTF, 16" Grid.Column="0" Grid.Row = "7" Margin="10,0,10,0" XAlign="Start" TextColor="White"/>
+				<Label Text="• 7:00 –  Basen (basen UP, Chełmońskiego 43) &#10;• 19:00 – Msza święta (kościół NSJ) &#10;• 20:00 – O2 = Oaza + Odnowa (Stolarnia i salka kaflowa)" 
+						   Font="Assets/Fonts/LATO-BLACK.TTF, 13" Grid.Column="0" Grid.Row = "8" Margin="10,0,10,0" XAlign="Start" TextColor="White"/>
+
+				<Label Text="Czwartek" FontAttributes="Bold"
+						   Font="Assets/Fonts/LATO-BLACK.TTF, 16" Grid.Column="0" Grid.Row = "9" Margin="10,0,10,0" XAlign="Start" TextColor="White"/>
+				<Label Text="• 19:00 – Msza święta (kościół NSJ) &#10;• 20:00 – Imprezy / Wieczory / Wyjścia (Stolarnia)" 
+						   Font="Assets/Fonts/LATO-BLACK.TTF, 13" Grid.Column="0" Grid.Row = "10" Margin="10,0,10,0" XAlign="Start" TextColor="White"/>
+
+				<Label Text="Piątek" FontAttributes="Bold"
+						   Font="Assets/Fonts/LATO-BLACK.TTF, 16" Grid.Column="0" Grid.Row = "11" Margin="10,0,10,0" XAlign="Start" TextColor="White"/>
+				<Label Text="• 19:00 – Msza święta (kościół NSJ) &#10;• 20:00 – Tabor (salka kaflowa i kaplica Mostu) &#10;• 21:30 – Sport w Moście (sala sportowa UP, Chełmońskiego 43)" 
+						   Font="Assets/Fonts/LATO-BLACK.TTF, 13" Grid.Column="0" Grid.Row = "12" Margin="10,0,10,0" XAlign="Start" TextColor="White"/>
+
+				<Label Text="Sobota" FontAttributes="Bold"
+						   Font="Assets/Fonts/LATO-BLACK.TTF, 16" Grid.Column="0" Grid.Row = "13" Margin="10,0,10,0" XAlign="Start" TextColor="White"/>
+				<Label Text="• 09:30 – Oratorium" 
+						   Font="Assets/Fonts/LATO-BLACK.TTF, 13" Grid.Column="0" Grid.Row = "14" Margin="10,0,10,20" XAlign="Start" TextColor="White"/>
+			</Grid>
+		</Grid>
+		</ScrollView>
+	</ContentPage.Content>
+</ContentPage>

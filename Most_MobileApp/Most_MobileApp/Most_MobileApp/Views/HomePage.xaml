@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Most_MobileApp.Views.HomePage"
+			 BackgroundColor="#4b688f">
+	<ContentPage.Content>
+		<ScrollView>
+		<Grid x:Name="MasterGrid" RowSpacing="0" ColumnSpacing="0">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="100" />
+				<RowDefinition Height="100" />
+				<RowDefinition Height="*"	/>
+			</Grid.RowDefinitions>
+			<StackLayout x:Name="LogoMost" VerticalOptions="StartAndExpand" BackgroundColor="#4b688f" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" Margin="0,0,0,-45">
+				<Image x:Name="MostIcon" Source="logo_MOST_2.png" Margin="0,15,0,15" />
+			</StackLayout>
+			<StackLayout x:Name="NavigationBar" Orientation="Horizontal" VerticalOptions="Start" BackgroundColor="#45B43B" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1" Margin="0,-45,0,0">
+				<StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="Start" >
+					<Picker x:Name="MainMenu" SelectedIndexChanged="MenuOption">
+						<Picker.Items>
+							<x:String>SDA MOST</x:String>
+							<x:String>Konstrukcja</x:String>
+							<x:String>Duszpasterze</x:String>
+							<x:String>Plan tygodnia</x:String>
+							<x:String>Jak trafić?</x:String>
+							<x:String>Kalendarz</x:String>
+						</Picker.Items>
+						<Picker.SelectedIndex>0</Picker.SelectedIndex>
+					</Picker>
+				</StackLayout>
+				<StackLayout Orientation="Vertical" HorizontalOptions="End" VerticalOptions="Start">
+					<Button x:Name="BackButton" VerticalOptions="Center" Text="Wyjdź" Font="Assets/Fonts/LATO-BLACK.TTF, 12" Opacity="0.7" Clicked="BackProcedure"/>
+				</StackLayout>
+			</StackLayout>
+			<Grid x:Name="ContentGrid" RowSpacing="0" ColumnSpacing="0" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" Margin="0,-60,0,0">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="100"/>
+					<ColumnDefinition Width="*"/>
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="30"/>
+					<RowDefinition Height="30"/>
+					<RowDefinition Height="110"/>
+					<RowDefinition Height="140"/>
+					<RowDefinition Height="80"/>
+					<RowDefinition Height="80"/>
+					<RowDefinition Height="100"/>
+					<RowDefinition Height="90"/>
+					<RowDefinition Height="40"/>
+					<RowDefinition Height="30"/>
+					<RowDefinition Height="120"/>
+					<RowDefinition Height="80"/>
+				</Grid.RowDefinitions>
+				<Label Text="Witaj w aplikacji mobilnej SDA MOST!"
+						Font="Assets/Fonts/LATO-BLACK.TTF, 17" TextColor="White" FontAttributes="Bold" XAlign="Center" 
+						Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" HorizontalOptions="CenterAndExpand" VerticalOptions="Start" Margin="10,10,10,0" />
+			
+				<Label Text="Pozwól, że oprowadzę Cię po menu aplikacji..."
+						Font="Assets/Fonts/LATO-BLACK.TTF, 11" TextColor="White" FontAttributes="Italic" XAlign="Center" 
+						Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" HorizontalOptions="CenterAndExpand" VerticalOptions="Start" Margin="10,10,10,0" />
+
+				<Label Text="SDA MOST"
+						Font="Assets/Fonts/LATO-BLACK.TTF, 14" TextColor="White" FontAttributes="Bold"
+						Grid.Column="0" Grid.Row="2" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Margin="10,10,10,0" />
+				<Label Text="Tutaj właśnie jesteśmy. Obecnie strona główna zawiera tylko opis miejsc w aplikacji, ale być może w przyszłości pojawi się tutaj coś innego. Stay tuned ;)"
+						Font="Assets/Fonts/LATO-BLACK.TTF, 12" TextColor="White"
+						Grid.Column="1" Grid.Row="2" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" Margin="10,10,10,0" />
+
+				<Label Text="Konstrukcja"
+						Font="Assets/Fonts/LATO-BLACK.TTF, 14" TextColor="White" FontAttributes="Bold"
+						Grid.Column="0" Grid.Row="3" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Margin="10,10,10,0" />
+				<Label Text="Jeżeli chcesz się zaangażować w działalność MOSTu, to w tym miejscu znajdziesz namiary na osoby odpowiedzialne za pewną przestrzeń w duszpasterstwie. Ponadto znajdziesz też tutaj krótki opis przęseł."
+						Font="Assets/Fonts/LATO-BLACK.TTF, 12" TextColor="White"
+						Grid.Column="1" Grid.Row="3" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" Margin="10,10,10,0" />
+
+				<Label Text="Duszpasterze"
+						Font="Assets/Fonts/LATO-BLACK.TTF, 14" TextColor="White" FontAttributes="Bold"
+						Grid.Column="0" Grid.Row="4" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Margin="10,10,10,0" />
+				<Label Text="Na tej stronie znajdziesz informacje o naszych duszpasterzach, a także kontakt do nich."
+						Font="Assets/Fonts/LATO-BLACK.TTF, 12" TextColor="White"
+						Grid.Column="1" Grid.Row="4" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" Margin="10,10,10,0" />
+			
+				<Label Text="Plan tygodnia"
+						Font="Assets/Fonts/LATO-BLACK.TTF, 14" TextColor="White" FontAttributes="Bold"
+						Grid.Column="0" Grid.Row="5" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Margin="10,10,10,0" />
+				<Label Text="W Moście wszystko dzieje się według pewnego stałego planu. Tutaj możesz go zobaczyć!"
+						Font="Assets/Fonts/LATO-BLACK.TTF, 12" TextColor="White"
+						Grid.Column="1" Grid.Row="5" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" Margin="10,10,10,0" />
+			
+				<Label Text="Jak trafić?"
+						Font="Assets/Fonts/LATO-BLACK.TTF, 14" TextColor="White" FontAttributes="Bold"
+						Grid.Column="0" Grid.Row="6" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Margin="10,10,10,0" />
+				<Label Text="A jeżeli w dalszym ciągu nie wiesz jak do Nas trafić - zajrzyj tutaj! Tutaj są jednak stałe pozycje w ciągu dnia - dodatkowe rzeczy znajdziesz w Kalendarzu!"
+						Font="Assets/Fonts/LATO-BLACK.TTF, 12" TextColor="White"
+						Grid.Column="1" Grid.Row="6" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" Margin="10,10,10,0" />
+			
+				<Label Text="Kalendarz"
+						Font="Assets/Fonts/LATO-BLACK.TTF, 14" TextColor="White" FontAttributes="Bold"
+						Grid.Column="0" Grid.Row="7" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Margin="10,10,10,20" />
+				<Label Text="Tutaj możesz zobaczyć szczegółowy plan wydarzeń w aktualnym tygodniu."
+						Font="Assets/Fonts/LATO-BLACK.TTF, 12" TextColor="White"
+						Grid.Column="1" Grid.Row="7" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" Margin="10,10,10,20" />
+
+				<Label Text="Więcej informacji znajdziesz na naszej stronie internetowej"
+						Font="Assets/Fonts/LATO-BLACK.TTF, 11" TextColor="White"  XAlign="Center" 
+						Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="8" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Margin="10,10,10,0" />
+				
+				<Label Text="www.most.salezjanie.pl"
+						Font="Assets/Fonts/LATO-BLACK.TTF, 16" TextColor="White" FontAttributes="Bold" XAlign="Center" 
+						Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="9" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Margin="10,10,10,0" />
+			
+				<Image x:Name="MostLogoContentGrid" Source="logo_MOST_2.png" 
+					   HorizontalOptions="CenterAndExpand" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="10" Margin="10,20,10,0"/>
+
+					<Label Text="Jeżeli zauważyłeś/aś jakiś błąd w aplikacji, albo masz jakieś sugestie jak ją aplikację... &#10;Daj mi znać mailowo: kszpieg@gmail.com. &#10;Dzięki!"
+						Font="Assets/Fonts/LATO-BLACK.TTF, 10" TextColor="White" FontAttributes="Italic"
+						Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="11" HorizontalOptions="CenterAndExpand" VerticalOptions="Start" XAlign="Center" Margin="10,10,10,0" />
+				</Grid>
+			</Grid>
+		</ScrollView>
+	</ContentPage.Content>
+</ContentPage>

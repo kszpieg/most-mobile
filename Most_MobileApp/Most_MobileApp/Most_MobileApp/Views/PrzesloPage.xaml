@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Most_MobileApp.Views.PrzesloPage"
+			 BackgroundColor="#4b688f">
+	<ContentPage.Content>
+		<ScrollView>
+			<Grid x:Name="MasterGrid" RowSpacing="0" ColumnSpacing="0">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*" />
+					<ColumnDefinition Width="*" />
+					<ColumnDefinition Width="*" />
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="100" />
+					<RowDefinition Height="100" />
+					<RowDefinition Height="*"	/>
+				</Grid.RowDefinitions>
+				<StackLayout x:Name="LogoMost" VerticalOptions="StartAndExpand" BackgroundColor="#4b688f" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" Margin="0,0,0,-45">
+					<Image x:Name="MostIcon" Source="logo_MOST_2.png" Margin="0,15,0,15" />
+				</StackLayout>
+				<StackLayout x:Name="NavigationBar" Orientation="Horizontal" VerticalOptions="Start" BackgroundColor="#45B43B" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1" Margin="0,-45,0,0">
+					<StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="Start" >
+						<Picker x:Name="MainMenu" SelectedIndexChanged="MenuOption">
+							<Picker.Items>
+								<x:String>SDA MOST</x:String>
+								<x:String>Konstrukcja</x:String>
+								<x:String>Duszpasterze</x:String>
+								<x:String>Plan tygodnia</x:String>
+								<x:String>Jak trafić?</x:String>
+								<x:String>Kalendarz</x:String>
+							</Picker.Items>
+							<Picker.SelectedIndex>1</Picker.SelectedIndex>
+						</Picker>
+					</StackLayout>
+					<StackLayout Orientation="Vertical" HorizontalOptions="End" VerticalOptions="Start">
+						<Button x:Name="BackButton" VerticalOptions="Center" Text="Wyjdź" Font="Assets/Fonts/LATO-BLACK.TTF, 12" Opacity="0.7" Clicked="BackProcedure"/>
+					</StackLayout>
+				</StackLayout>
+				<Grid x:Name="ContentGrid" RowSpacing="0" ColumnSpacing="0" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" Margin="0,-60,0,0">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="*" />
+						<ColumnDefinition Width="*" />
+						<ColumnDefinition Width="*" />
+					</Grid.ColumnDefinitions>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="30"/>						<!--nazwa przesla-->
+						<RowDefinition Height="250" />						<!--opis przesla-->
+						<RowDefinition Height="20" />						<!--do przesla naleza...-->
+						<RowDefinition Height="*" />						<!--lista podprzesel-->
+						<RowDefinition Height="20" />						<!--szefem jest...-->
+						<RowDefinition Height="120" />						<!--dane szefa-->
+						<RowDefinition Height="120" />						<!--przycisk do konstrukcji-->
+					</Grid.RowDefinitions>
+					<Label x:Name="PrzesloName" 
+						Font="Assets/Fonts/LATO-BLACK.TTF, 21" TextColor="White" FontAttributes="Bold"
+						Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Margin="10,0,10,0" />
+
+					<Label x:Name="PrzesloDescription" 
+						Font="Assets/Fonts/LATO-BLACK.TTF, 11" TextColor="White"
+						Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" Margin="10,0,10,0" />
+
+					<Label Text="Podprzęsła:"
+						Font="Assets/Fonts/LATO-BLACK.TTF, 12" TextColor="White"
+						Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Margin="10,0,10,0" />
+
+					<Frame x:Name="PrzesloFrame"
+						   VerticalOptions="StartAndExpand" HorizontalOptions="Center" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="3" Margin="10,0,10,20">
+						<Label x:Name="PrzesloContent" Font="Assets/Fonts/LATO-BLACK.TTF, 12" TextColor="White" Margin="10,10,10,10"
+							   VerticalOptions="StartAndExpand" HorizontalOptions="Start"/>
+					</Frame>
+					<!--Szef-->
+					<Label Text="Szef przęsła" Font="Assets/Fonts/LATO-BLACK.TTF, 15" FontAttributes="Bold" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="4" Margin="10,0,0,0" TextColor="White"/>
+					<Image x:Name="Picture_chef" Grid.Column="0" Grid.Row="5" Margin="10,0,10,0" VerticalOptions="CenterAndExpand"/>
+					<StackLayout x:Name="Data_chef" Orientation="Vertical" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="5" VerticalOptions="CenterAndExpand" Margin="10,0,0,0" >
+						<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+							<Image x:Name="Contact_chef" Source="contact.png" />
+							<Label x:Name="Chef_name" Font="Assets/Fonts/LATO-BLACK.TTF, 12" TextColor="White"/>
+						</StackLayout>
+						<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+							<Image x:Name="Phone_chef" Source="tel.png" />
+							<Label x:Name="Chef_phone" Font="Assets/Fonts/LATO-BLACK.TTF, 12" TextColor="White"/>
+						</StackLayout>
+						<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+							<Image x:Name="Email_chef" Source="email.png" />
+							<Label x:Name="Chef_mail" Font="Assets/Fonts/LATO-BLACK.TTF, 12" TextColor="White"/>
+						</StackLayout>
+					</StackLayout>
+					<StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="6" Margin="10,0,10,0">
+						<Button x:Name="BackToConstructionButton" HorizontalOptions="Center" VerticalOptions="Center" Text="Wróć do konstrukcji" Font="Assets/Fonts/LATO-BLACK.TTF, 12" Opacity="0.7" HeightRequest="40" WidthRequest="250" Clicked="BackToConstruction"/>
+					</StackLayout>
+				</Grid>
+			</Grid>
+		</ScrollView>
+	</ContentPage.Content>
+</ContentPage>

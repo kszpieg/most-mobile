@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Most_MobileApp.Views.Construction"
+			 BackgroundColor="#4b688f">
+	<ContentPage.Content>
+		<ScrollView>
+		<Grid x:Name="MasterGrid" RowSpacing="0" ColumnSpacing="0">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="100" />
+				<RowDefinition Height="100" />
+				<RowDefinition Height="*"	/>
+			</Grid.RowDefinitions>
+			<StackLayout x:Name="LogoMost" VerticalOptions="StartAndExpand" BackgroundColor="#4b688f" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" Margin="0,0,0,-45">
+				<Image x:Name="MostIcon" Source="logo_MOST_2.png" Margin="0,15,0,15" />
+			</StackLayout>
+			<StackLayout x:Name="NavigationBar" Orientation="Horizontal" VerticalOptions="Start" BackgroundColor="#45B43B" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1" Margin="0,-45,0,0">
+				<StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="Start" >
+					<Picker x:Name="MainMenu" SelectedIndexChanged="MenuOption">
+						<Picker.Items>
+							<x:String>SDA MOST</x:String>
+							<x:String>Konstrukcja</x:String>
+							<x:String>Duszpasterze</x:String>
+							<x:String>Plan tygodnia</x:String>
+							<x:String>Jak trafić?</x:String>
+							<x:String>Kalendarz</x:String>
+						</Picker.Items>
+						<Picker.SelectedIndex>1</Picker.SelectedIndex>
+					</Picker>
+				</StackLayout>
+				<StackLayout Orientation="Vertical" HorizontalOptions="End" VerticalOptions="Start">
+					<Button x:Name="BackButton" VerticalOptions="Center" Text="Wyjdź" Font="Assets/Fonts/LATO-BLACK.TTF, 12" Opacity="0.7" Clicked="BackProcedure"/>
+				</StackLayout>
+			</StackLayout>
+				<Grid x:Name="ContentGrid" RowSpacing="0" ColumnSpacing="0" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" Margin="0,-60,0,0">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="*" />
+						<ColumnDefinition Width="*" />
+						<ColumnDefinition Width="*" />
+					</Grid.ColumnDefinitions>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="100"/>	<!--opis-->
+						<RowDefinition Height="20" />	<!--Szef-->
+						<RowDefinition Height="120" />
+						<RowDefinition Height="20" />	<!--V-ce szef-->
+						<RowDefinition Height="120" />
+						<RowDefinition Height="20" />	<!--V-ce szef-->
+						<RowDefinition Height="120" />
+						<RowDefinition Height="40"/>	<!--opis-->
+						<RowDefinition Height="530"/>	<!--przęsła-->
+					</Grid.RowDefinitions>
+					<Label Text="Jak wiadomo, most jest zbudowany z przęseł. U nas jest 10 przęseł, a nad wszystkim czuwa tzw. sekstet, składający się z naszych duszpasterzy oraz szefa Mostu i jego dwóch zastępców."
+						Font="Assets/Fonts/LATO-BLACK.TTF, 11" TextColor="White"
+						Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" Margin="10,0,10,20" />
+					<!--Szef-->
+					<Label Text="Szef" Font="Assets/Fonts/LATO-BLACK.TTF, 15" FontAttributes="Bold" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1" Margin="10,0,0,0" TextColor="White"/>
+					<Image x:Name="chef" Grid.Column="0" Grid.Row="2" Margin="10,0,10,0" VerticalOptions="CenterAndExpand"/>
+					<StackLayout x:Name="Data_chef" Orientation="Vertical" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="2" VerticalOptions="CenterAndExpand" Margin="10,0,0,0" >
+						<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+							<Image x:Name="Contact_chef" Source="contact.png" />
+							<Label x:Name="Chef_name" Font="Assets/Fonts/LATO-BLACK.TTF, 12" TextColor="White"/>
+						</StackLayout>
+						<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+							<Image x:Name="Phone_chef" Source="tel.png" />
+							<Label x:Name="Chef_phone" Font="Assets/Fonts/LATO-BLACK.TTF, 12" TextColor="White"/>
+						</StackLayout>
+						<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+							<Image x:Name="Email_chef" Source="email.png" />
+							<Label x:Name="Chef_mail" Font="Assets/Fonts/LATO-BLACK.TTF, 12" TextColor="White"/>
+						</StackLayout>
+					</StackLayout>
+						<!--1 V-ce szef-->
+						<Label Text="Zastępca szefa" Font="Assets/Fonts/LATO-BLACK.TTF, 15" FontAttributes="Bold" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="3" Margin="10,0,0,0" TextColor="White"/>
+						<Image x:Name="vce1_chef" Grid.Column="0" Grid.Row="4" Margin="10,0,10,0" VerticalOptions="CenterAndExpand"/>
+						<StackLayout x:Name="Data_vce1chef" Orientation="Vertical" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="4" VerticalOptions="CenterAndExpand" Margin="10,0,0,0" >
+							<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+								<Image x:Name="Contact_vce1chef" Source="contact.png" />
+								<Label x:Name="vce1_name" Font="Assets/Fonts/LATO-BLACK.TTF, 12" TextColor="White"/>
+							</StackLayout>
+							<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+								<Image x:Name="Phone_vce1chef" Source="tel.png" />
+								<Label x:Name="vce1_phone" Font="Assets/Fonts/LATO-BLACK.TTF, 12" TextColor="White"/>
+							</StackLayout>
+							<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+								<Image x:Name="Email_vce1chef" Source="email.png" />
+								<Label x:Name="vce1_mail" Font="Assets/Fonts/LATO-BLACK.TTF, 12" TextColor="White"/>
+							</StackLayout>
+						</StackLayout>
+						<!--2 V-ce szef-->
+						<Label Text="Zastępca szefa" Font="Assets/Fonts/LATO-BLACK.TTF, 15" FontAttributes="Bold" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="5" Margin="10,0,0,0" TextColor="White"/>
+						<Image x:Name="vce2_chef" Grid.Column="0" Grid.Row="6" Margin="10,0,10,0" VerticalOptions="CenterAndExpand"/>
+						<StackLayout x:Name="Data_vce2chef" Orientation="Vertical" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="6" VerticalOptions="CenterAndExpand" Margin="10,0,0,10" >
+						<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+								<Image x:Name="Contact_vce2chef" Source="contact.png" />
+								<Label x:Name="vce2_name" Font="Assets/Fonts/LATO-BLACK.TTF, 12" TextColor="White"/>
+							</StackLayout>
+							<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+								<Image x:Name="Phone_vce2chef" Source="tel.png" />
+								<Label x:Name="vce2_phone" Font="Assets/Fonts/LATO-BLACK.TTF, 12" TextColor="White"/>
+							</StackLayout>
+							<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+								<Image x:Name="Email_vce2chef" Source="email.png" />
+								<Label x:Name="vce2_mail" Font="Assets/Fonts/LATO-BLACK.TTF, 12" TextColor="White"/>
+							</StackLayout>
+						</StackLayout>
+						<Label Text="Dowiedz się więcej o Moście na stronach poszczególnych przęseł:"
+							Font="Assets/Fonts/LATO-BLACK.TTF, 10" TextColor="White"
+							Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="7" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" Margin="10,0,10,0" />
+						<StackLayout x:Name="PrzeslaBar" Orientation="Vertical" HorizontalOptions="CenterAndExpand" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="8" Margin="10,0,10,20">
+						<StackLayout Orientation="Vertical" HorizontalOptions="End" VerticalOptions="Start">
+							<Button x:Name="DuchoweButton" VerticalOptions="Center" Text="Przęsło duchowe" Image="duc.png" Font="Assets/Fonts/LATO-BLACK.TTF, 12" Opacity="0.7" HeightRequest="40" WidthRequest="250" BackgroundColor="Transparent" TextColor="White" HorizontalOptions="Center" Clicked="DuchoweView"/>
+						</StackLayout>
+						<StackLayout Orientation="Vertical" HorizontalOptions="End" VerticalOptions="Start">
+							<Button x:Name="LiturgiczneButton" VerticalOptions="Center" Text="Przęsło liturgiczne" Image="lit.png" Font="Assets/Fonts/LATO-BLACK.TTF, 12" Opacity="0.7" HeightRequest="40" WidthRequest="250" BackgroundColor="Transparent" TextColor="White" HorizontalOptions="Center" Clicked="LiturgiczneView" />
+						</StackLayout>
+						<StackLayout Orientation="Vertical" HorizontalOptions="End" VerticalOptions="Start">
+							<Button x:Name="FormacyjneButton" VerticalOptions="Center" Text="Przęsło formacyjne" Image="form.png" Font="Assets/Fonts/LATO-BLACK.TTF, 12" Opacity="0.7" HeightRequest="40" WidthRequest="250" BackgroundColor="Transparent" TextColor="White" HorizontalOptions="Center" Clicked="FormacyjneView"/>
+						</StackLayout>
+						<StackLayout Orientation="Vertical" HorizontalOptions="End" VerticalOptions="Start">
+							<Button x:Name="KulturalneButton" VerticalOptions="Center" Text="Przęsło kulturalne" Image="kul.png" Font="Assets/Fonts/LATO-BLACK.TTF, 12" Opacity="0.7" HeightRequest="40" WidthRequest="250" BackgroundColor="Transparent" TextColor="White" HorizontalOptions="Center" Clicked="KulturalneView"/>
+						</StackLayout>
+						<StackLayout Orientation="Vertical" HorizontalOptions="End" VerticalOptions="Start">
+							<Button x:Name="MedialneButton" VerticalOptions="Center" Text="Przęsło medialne" Image="med.png" Font="Assets/Fonts/LATO-BLACK.TTF, 12" Opacity="0.7" HeightRequest="40" WidthRequest="250" BackgroundColor="Transparent" TextColor="White" HorizontalOptions="Center" Clicked="MedialneView"/>
+						</StackLayout>
+						<StackLayout Orientation="Vertical" HorizontalOptions="End" VerticalOptions="Start">
+							<Button x:Name="GospodarczeButton" VerticalOptions="Center" Text="Przęsło gospodarcze" Image="gosp.png" Font="Assets/Fonts/LATO-BLACK.TTF, 12" Opacity="0.7" HeightRequest="40" WidthRequest="250" BackgroundColor="Transparent" TextColor="White" HorizontalOptions="Center" Clicked="GospodarczeView"/>
+						</StackLayout>
+						<StackLayout Orientation="Vertical" HorizontalOptions="End" VerticalOptions="Start">
+							<Button x:Name="SportoweButton" VerticalOptions="Center" Text="Przęsło sportowe" Image="spo.png" Font="Assets/Fonts/LATO-BLACK.TTF, 12" Opacity="0.7" HeightRequest="40" WidthRequest="250" BackgroundColor="Transparent" TextColor="White" HorizontalOptions="Center" Clicked="SportoweView"/>
+						</StackLayout>
+						<StackLayout Orientation="Vertical" HorizontalOptions="End" VerticalOptions="Start">
+							<Button x:Name="DlaInnychButton" VerticalOptions="Center" Text="Przęsło 'Dla Innych'" Image="inn.png" Font="Assets/Fonts/LATO-BLACK.TTF, 12" Opacity="0.7" HeightRequest="40" WidthRequest="250" BackgroundColor="Transparent" TextColor="White" HorizontalOptions="Center" Clicked="DlaInnychView"/>
+						</StackLayout>
+						<StackLayout Orientation="Vertical" HorizontalOptions="End" VerticalOptions="Start">
+							<Button x:Name="TurystyczneButton" VerticalOptions="Center" Text="Przęsło turystyczne" Image="tur.png" Font="Assets/Fonts/LATO-BLACK.TTF, 12" Opacity="0.7" HeightRequest="40" WidthRequest="250" BackgroundColor="Transparent" TextColor="White" HorizontalOptions="Center" Clicked="TurystyczneView"/>
+						</StackLayout>
+						<StackLayout Orientation="Vertical" HorizontalOptions="End" VerticalOptions="Start">
+							<Button x:Name="MuzyczneButton" VerticalOptions="Center" Text="Przęsło muzyczne" Image="muz.png" Font="Assets/Fonts/LATO-BLACK.TTF, 12" Opacity="0.7" HeightRequest="40" WidthRequest="250" BackgroundColor="Transparent" TextColor="White" HorizontalOptions="Center" Clicked="MuzyczneView"/>
+						</StackLayout>
+					</StackLayout>
+				</Grid>
+			</Grid>
+		</ScrollView>
+	</ContentPage.Content>
+</ContentPage>

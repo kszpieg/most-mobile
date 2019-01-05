@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Most_MobileApp.Views.Priests"
+			 BackgroundColor="#4b688f">
+	<ContentPage.Content>
+		<ScrollView>
+		<Grid x:Name="MasterGrid" RowSpacing="0" ColumnSpacing="0">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="100" />
+				<RowDefinition Height="100" />
+				<RowDefinition Height="*"	/>
+			</Grid.RowDefinitions>
+			<StackLayout x:Name="LogoMost" VerticalOptions="StartAndExpand" BackgroundColor="#4b688f" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" Margin="0,0,0,-45">
+				<Image x:Name="MostIcon" Source="logo_MOST_2.png" Margin="0,15,0,15" />
+			</StackLayout>
+			<StackLayout x:Name="NavigationBar" Orientation="Horizontal" VerticalOptions="Start" BackgroundColor="#45B43B" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1" Margin="0,-45,0,0">
+				<StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="Start" >
+					<Picker x:Name="MainMenu" SelectedIndexChanged="MenuOption">
+						<Picker.Items>
+							<x:String>SDA MOST</x:String>
+							<x:String>Konstrukcja</x:String>
+							<x:String>Duszpasterze</x:String>
+							<x:String>Plan tygodnia</x:String>
+							<x:String>Jak trafić?</x:String>
+							<x:String>Kalendarz</x:String>
+						</Picker.Items>
+						<Picker.SelectedIndex>2</Picker.SelectedIndex>
+					</Picker>
+				</StackLayout>
+				<StackLayout Orientation="Vertical" HorizontalOptions="End" VerticalOptions="Start">
+					<Button x:Name="BackButton" VerticalOptions="Center" Text="Wyjdź" Font="Assets/Fonts/LATO-BLACK.TTF, 12" Opacity="0.7" Clicked="BackProcedure"/>
+				</StackLayout>
+			</StackLayout>
+
+				<Grid x:Name="ContentGrid" RowSpacing="0" ColumnSpacing="0" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" Margin="0,-60,0,0">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="*" />
+						<ColumnDefinition Width="*" />
+						<ColumnDefinition Width="*" />
+					</Grid.ColumnDefinitions>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="20" />	<!-- xG-->
+						<RowDefinition Height="120" />
+						<RowDefinition Height="*"/>
+						<RowDefinition Height="20" />	<!-- xT-->
+						<RowDefinition Height="120" />
+						<RowDefinition Height="*"/>
+						<RowDefinition Height="20" />	<!-- sA-->
+						<RowDefinition Height="120" />
+						<RowDefinition Height="*"/>
+					</Grid.RowDefinitions>
+					<!--xG-->
+					<Label Text="ks. Grzegorz Dłużniak SDB" Font="Assets/Fonts/LATO-BLACK.TTF, 15" FontAttributes="Bold" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" Margin="10,0,0,0" TextColor="White"/>
+					<Image x:Name="xG" Source="xg.png" Grid.Column="0" Grid.Row="1" Margin="10,0,10,0" VerticalOptions="CenterAndExpand"/>
+					<StackLayout x:Name="Data_xG" Orientation="Vertical" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" VerticalOptions="CenterAndExpand" Margin="10,0,0,0" >
+						<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+							<Image x:Name="PhonexG" Source="tel.png" />
+							<Label Text="724 227 299" Font="Assets/Fonts/LATO-BLACK.TTF, 12" TextColor="White"/>
+						</StackLayout>
+						<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+							<Image x:Name="EmailxG" Source="email.png" />
+							<Label Text="longus.sdb@gmail.com" Font="Assets/Fonts/LATO-BLACK.TTF, 12" TextColor="White"/>
+						</StackLayout>
+					</StackLayout>
+					<Label Text="Pochodzi ze stolicy polskiej miedzi – Lubina. Zanim został Salezjaninem, przez 5 lat wzrastał we wspólnocie Salezjańskiej Pielgrzymki Ewangelizacyjnej, wspólnocie, która stała się w ręku Boga narzędziem, by przyprowadzić go do wiary i Kościoła. Aby się odwdzięczyć za otrzymane wychowanie duchowe i religijne, sam został Salezjaninem. Miłośnik sportu i szybkich przejażdżek rowerowych."
+						   Font="Assets/Fonts/LATO-BLACK.TTF, 10" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row = "2" Margin="10,0,10,10" XAlign="Start" TextColor="White"/>
+					<!--xT-->
+					<Label Text="ks. Tomasz Hawrylewicz SDB" Font="Assets/Fonts/LATO-BLACK.TTF, 15" FontAttributes="Bold" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="3" Margin="10,0,0,0" TextColor="White"/>
+					<Image x:Name="xT" Source="xt.png" Grid.Column="0" Grid.Row="4" Margin="10,0,10,0" VerticalOptions="CenterAndExpand"/>
+					<StackLayout x:Name="Data_xT" Orientation="Vertical" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="4" VerticalOptions="CenterAndExpand" Margin="10,0,0,0" >
+						<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+							<Image x:Name="PhonexT" Source="tel.png" />
+							<Label Text="662 136 587" Font="Assets/Fonts/LATO-BLACK.TTF, 12" TextColor="White"/>
+						</StackLayout>
+						<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+							<Image x:Name="EmailxT" Source="email.png" />
+							<Label Text="thawrylewicz@yahoo.pl" Font="Assets/Fonts/LATO-BLACK.TTF, 12" TextColor="White"/>
+						</StackLayout>
+					</StackLayout>
+					<Label Text="Urodził się w Lubaniu Śl. Studiował w Ziemi Świętej i pracował w ojczyźnie Księdza Bosko. Uważa, że każdy jest niesamowitą tajemnicą miłości Pana Boga. Pasjonuje się jazdą na rowerze, rolkami, bieganiem i pływaniem długodystansowym oraz sportami zimowymi. Obecnie delegat ks. inspektora d.s. powołań i nauczyciel w Zespole Szkół Salezjańskich 'Don Bosco'."
+						   Font="Assets/Fonts/LATO-BLACK.TTF, 10" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row = "5" Margin="10,0,10,10" XAlign="Start" TextColor="White"/>
+					<!--sA-->
+					<Label Text="s. Agnieszka Bednarczyk FMA" Font="Assets/Fonts/LATO-BLACK.TTF, 15" FontAttributes="Bold" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="6" Margin="10,0,0,0" TextColor="White"/>
+					<Image x:Name="sA" Source="sa.png" Grid.Column="0" Grid.Row="7" Margin="10,0,10,0" VerticalOptions="CenterAndExpand" />
+					<StackLayout x:Name="Data_sA" Orientation="Vertical" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="7" VerticalOptions="CenterAndExpand" Margin="10,0,0,0" >
+						<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+							<Image x:Name="PhonesA" Source="tel.png" />
+							<Label Text="669 916 595" Font="Assets/Fonts/LATO-BLACK.TTF, 12" TextColor="White"/>
+						</StackLayout>
+						<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+							<Image x:Name="EmailsA" Source="email.png" />
+							<Label Text="agnieszka.fma@gmail.com" Font="Assets/Fonts/LATO-BLACK.TTF, 12" TextColor="White"/>
+						</StackLayout>
+					</StackLayout>
+					<Label Text="Przygoda z Rodziną Salezjańską rozpoczęła się w Oświęcimiu, gdzie chodziła do Liceum Ogólnokształcącego prowadzonego przez Salezjanów. Tam i później podczas studiów miała możliwości poznać i zaangażować się w różne wspólnoty salezjańskie. Poprzez te doświadczenia powoli odkrywała swoje powołanie. Aż pewnego dnia postawiła wszystko na jedną kartę – zostawiła studia, by iść za głosem Boga. Wstąpiła do Zgromadzenia Córek Maryi Wspomożycielki w 2013. Pierwszą profesję zakonną złożyła 5 sierpnia 2018 r. Lubi prowadzić samochód, pracować przy komputerze i grać w szachy."
+						   Font="Assets/Fonts/LATO-BLACK.TTF, 10" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row = "8" Margin="10,0,10,20" XAlign="Start" TextColor="White"/>
+				</Grid>
+			
+		</Grid>
+		</ScrollView>
+	</ContentPage.Content>
+</ContentPage>

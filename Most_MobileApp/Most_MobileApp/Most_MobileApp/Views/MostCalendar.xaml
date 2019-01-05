@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Most_MobileApp.Views.MostCalendar"
+			 BackgroundColor="#4b688f">
+	<ContentPage.Content>
+		<ScrollView>
+		<Grid x:Name="MasterGrid" RowSpacing="0" ColumnSpacing="0">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="100" />
+				<RowDefinition Height="100" />
+				<RowDefinition Height="*"	/>
+			</Grid.RowDefinitions>
+			<StackLayout x:Name="LogoMost" VerticalOptions="StartAndExpand" BackgroundColor="#4b688f" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" Margin="0,0,0,-45">
+				<Image x:Name="MostIcon" Source="logo_MOST_2.png" Margin="0,15,0,15" />
+			</StackLayout>
+			<StackLayout x:Name="NavigationBar" Orientation="Horizontal" VerticalOptions="Start" BackgroundColor="#45B43B" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1" Margin="0,-45,0,0">
+				<StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="Start" >
+					<Picker x:Name="MainMenu" SelectedIndexChanged="MenuOption">
+						<Picker.Items>
+							<x:String>SDA MOST</x:String>
+							<x:String>Konstrukcja</x:String>
+							<x:String>Duszpasterze</x:String>
+							<x:String>Plan tygodnia</x:String>
+							<x:String>Jak trafić?</x:String>
+							<x:String>Kalendarz</x:String>
+						</Picker.Items>
+						<Picker.SelectedIndex>5</Picker.SelectedIndex>
+					</Picker>
+				</StackLayout>
+				<StackLayout Orientation="Vertical" HorizontalOptions="End" VerticalOptions="Start">
+					<Button x:Name="BackButton" VerticalOptions="Center" Text="Wyjdź" Font="Assets/Fonts/LATO-BLACK.TTF, 12" Opacity="0.7" Clicked="BackProcedure"/>
+				</StackLayout>
+			</StackLayout>
+			<!--Calendar below-->
+			<Grid x:Name="ContentGrid" RowSpacing="0" ColumnSpacing="0" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" Margin="0,-60,0,0">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="50"/>
+					<ColumnDefinition Width="*"/>
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="*"/>
+				</Grid.RowDefinitions>
+					<StackLayout x:Name="WeekBar" Orientation="Vertical" HorizontalOptions="Start" Grid.Column="0" Grid.Row="0">
+						<StackLayout Orientation="Vertical" HorizontalOptions="End" VerticalOptions="Start">
+							<Button x:Name="SundayButton" VerticalOptions="Center" Text="Nd" Font="Assets/Fonts/LATO-BLACK.TTF, 12" Opacity="0.7" Clicked="SundayView"/>
+						</StackLayout>
+						<StackLayout Orientation="Vertical" HorizontalOptions="End" VerticalOptions="Start">
+							<Button x:Name="MondayButton" VerticalOptions="Center" Text="Pon" Font="Assets/Fonts/LATO-BLACK.TTF, 12" Opacity="0.7" Clicked="MondayView"/>
+						</StackLayout>
+						<StackLayout Orientation="Vertical" HorizontalOptions="End" VerticalOptions="Start">
+							<Button x:Name="TuesdayButton" VerticalOptions="Center" Text="Wt" Font="Assets/Fonts/LATO-BLACK.TTF, 12" Opacity="0.7" Clicked="TuesdayView"/>
+						</StackLayout>
+						<StackLayout Orientation="Vertical" HorizontalOptions="End" VerticalOptions="Start">
+							<Button x:Name="WednesdayButton" VerticalOptions="Center" Text="Śr" Font="Assets/Fonts/LATO-BLACK.TTF, 12" Opacity="0.7" Clicked="WednesdayView"/>
+						</StackLayout>
+						<StackLayout Orientation="Vertical" HorizontalOptions="End" VerticalOptions="Start">
+							<Button x:Name="ThursdayButton" VerticalOptions="Center" Text="Czw" Font="Assets/Fonts/LATO-BLACK.TTF, 12" Opacity="0.7" Clicked="ThursdayView"/>
+						</StackLayout>
+						<StackLayout Orientation="Vertical" HorizontalOptions="End" VerticalOptions="Start">
+							<Button x:Name="FridayButton" VerticalOptions="Center" Text="Pt" Font="Assets/Fonts/LATO-BLACK.TTF, 12" Opacity="0.7" Clicked="FridayView"/>
+						</StackLayout>
+						<StackLayout Orientation="Vertical" HorizontalOptions="End" VerticalOptions="Start">
+							<Button x:Name="SaturdayButton" VerticalOptions="Center" Text="Sob" Font="Assets/Fonts/LATO-BLACK.TTF, 12" Opacity="0.7" Clicked="SaturdayView"/>
+						</StackLayout>
+					</StackLayout>
+					<Frame x:Name="CalendarFrame" HeightRequest="350"
+						   VerticalOptions="StartAndExpand" HorizontalOptions="Start" Grid.Column="1" Grid.Row="0" Margin="10,0,10,20">
+						<Label x:Name="CalendarContent" Font="Assets/Fonts/LATO-BLACK.TTF, 12" TextColor="White" Margin="10,10,10,10"
+							   VerticalOptions="StartAndExpand" HorizontalOptions="Start"/>
+					</Frame>
+				</Grid>
+		</Grid>
+		</ScrollView>
+	</ContentPage.Content>
+</ContentPage>
